@@ -1,0 +1,63 @@
+{
+  "name": "npm-package-template",
+  "version": "0.0.0-development",
+  "description": "A Tailwind plugin that generates background-image TailwindCSS utilities from glob'd pattern of image files.",
+  "files": [
+    "lib/**/*"
+  ],
+  "types": "./lib/cjs/types/index.d.ts",
+  "main": "./lib/cjs/index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/esm/types/index.d.ts",
+        "default": "./lib/esm/index.mjs"
+      },
+      "require": {
+        "types": "./lib/cjs/types/index.d.ts",
+        "default": "./lib/cjs/index.js"
+      }
+    }
+  },
+  "scripts": {
+    "prebuild": "rm -rf ./lib",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p ./tsconfig.esm.json && find ./lib/esm -name \"*.js\" -exec sh -c 'mv \"$1\" \"${1%.js}.mjs\"' _ {} \\;",
+    "build:cjs": "tsc -p ./tsconfig.cjs.json",
+    "prepack": "npm run build",
+    "semantic-release": "semantic-release",
+    "commit": "cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OlenDavis/npm-package-template.git"
+  },
+  "keywords": [],
+  "author": "Olen Davis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OlenDavis/npm-package-template/issues"
+  },
+  "homepage": "https://github.com/OlenDavis/npm-package-template#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^10.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.0.4",
+    "@semantic-release/npm": "^10.0.4",
+    "@semantic-release/release-notes-generator": "^11.0.4",
+    "commitizen": "^4.3.0",
+    "conventional-changelog-conventionalcommits": "^6.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "semantic-release": "^21.0.7",
+    "typescript": "^5.1.6"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
