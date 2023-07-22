@@ -1,5 +1,5 @@
 {
-  "name": "@olenzilla/npm-package-template",
+  "name": "@olenzilla/vite-plugin-tailwindcss-spritesmith",
   "version": "0.0.0-development",
   "description": "A Tailwind plugin that generates background-image TailwindCSS utilities from glob'd pattern of image files.",
   "files": [
@@ -30,15 +30,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/olenzilla/npm-package-template.git"
+    "url": "https://github.com/olenzilla/vite-plugin-tailwindcss-spritesmith.git"
   },
   "keywords": [],
   "author": "Olen Davis",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/olenzilla/npm-package-template/issues"
+    "url": "https://github.com/olenzilla/vite-plugin-tailwindcss-spritesmith/issues"
   },
-  "homepage": "https://github.com/olenzilla/npm-package-template#readme",
+  "homepage": "https://github.com/olenzilla/vite-plugin-tailwindcss-spritesmith#readme",
   "publishConfig": {
     "access": "public"
   },
