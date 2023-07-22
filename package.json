@@ -1,5 +1,5 @@
 {
-  "name": "npm-package-template",
+  "name": "@olenzilla/npm-package-template",
   "version": "0.0.0-development",
   "description": "A Tailwind plugin that generates background-image TailwindCSS utilities from glob'd pattern of image files.",
   "files": [
@@ -30,15 +30,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/OlenDavis/npm-package-template.git"
+    "url": "https://github.com/olenzilla/npm-package-template.git"
   },
   "keywords": [],
   "author": "Olen Davis",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/OlenDavis/npm-package-template/issues"
+    "url": "https://github.com/olenzilla/npm-package-template/issues"
   },
-  "homepage": "https://github.com/OlenDavis/npm-package-template#readme",
+  "homepage": "https://github.com/olenzilla/npm-package-template#readme",
   "publishConfig": {
     "access": "public"
   },

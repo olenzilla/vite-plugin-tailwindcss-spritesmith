@@ -1,6 +1,6 @@
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+# @olenzilla/npm-package-template ![npm](https://img.shields.io/npm/v/@olenzilla/npm-package-template) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-# npm-package-template
+[![NPM](https://nodei.co/npm/@olenzilla/npm-package-template.png)](https://nodei.co/npm/@olenzilla/npm-package-template/)
 
 A template repo for forking to create new standalone npm package repos.
 
