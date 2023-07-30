@@ -6,9 +6,9 @@ useTabs: true
 xmlWhitespaceSensitivity: ignore
 overrides:
   - files:
-      - *.json
-      - *.yaml
-      - *.yml
+      - '*.json'
+      - '*.yaml'
+      - '*.yml'
     options:
       useTabs: false
       tabWidth: 2
