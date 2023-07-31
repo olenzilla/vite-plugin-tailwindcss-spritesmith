@@ -1,11 +1,10 @@
 name: Publish
-# # When you're ready to begin releasing to NPM, uncomment the following:
-# on:
-#   push:
-#     branches:
-#       - master
-# And remove this:
-on: workflow_dispatch
+# When you're ready to begin releasing to NPM, uncomment the following:
+on:
+  push:
+    branches:
+      - master
+      - beta
 
 jobs:
   release:
