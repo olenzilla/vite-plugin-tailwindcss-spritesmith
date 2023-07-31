@@ -1,6 +1,6 @@
 {
-  "name": "@olenzilla/npm-package-template",
-  "version": "0.0.0-development",
+  "name": "@olenzilla/vite-plugin-tailwindcss-spritesmith",
+  "version": "1.0.0-beta.1",
   "description": "A Tailwind plugin that generates background-image TailwindCSS utilities from glob'd pattern of image files.",
   "files": [
     "lib/**/*"
@@ -17,28 +17,49 @@
         "types": "./lib/cjs/types/index.d.ts",
         "default": "./lib/cjs/index.js"
       }
+    },
+    "./vite": {
+      "import": {
+        "types": "./lib/esm/types/vite.d.ts",
+        "default": "./lib/esm/vite.mjs"
+      },
+      "require": {
+        "types": "./lib/cjs/types/vite.d.ts",
+        "default": "./lib/cjs/vite.js"
+      }
+    },
+    "./tailwind": {
+      "import": {
+        "types": "./lib/esm/types/tailwind.d.ts",
+        "default": "./lib/esm/tailwind.mjs"
+      },
+      "require": {
+        "types": "./lib/cjs/types/tailwind.d.ts",
+        "default": "./lib/cjs/tailwind.js"
+      }
     }
   },
   "scripts": {
+    "start": "TS_WATCH=true npm run build",
     "prebuild": "rm -rf ./lib",
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc -p ./tsconfig.esm.json && find ./lib/esm -name \"*.js\" -exec sh -c 'mv \"$1\" \"${1%.js}.mjs\"' _ {} \\;",
-    "build:cjs": "tsc -p ./tsconfig.cjs.json",
+    "build": "run-p build:*",
+    "build:esm": "tsc -w ${TS_WATCH:-false} -p ./tsconfig.esm.json && find ./lib/esm -name \"*.js\" -exec sh -c 'mv \"$1\" \"${1%.js}.mjs\"' _ {} \\;",
+    "build:cjs": "tsc -w ${TS_WATCH:-false} -p ./tsconfig.cjs.json",
     "prepack": "npm run build",
     "semantic-release": "semantic-release",
     "commit": "cz"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/olenzilla/npm-package-template.git"
+    "url": "https://github.com/olenzilla/vite-plugin-tailwindcss-spritesmith.git"
   },
   "keywords": [],
   "author": "Olen Davis",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/olenzilla/npm-package-template/issues"
+    "url": "https://github.com/olenzilla/vite-plugin-tailwindcss-spritesmith/issues"
   },
-  "homepage": "https://github.com/olenzilla/npm-package-template#readme",
+  "homepage": "https://github.com/olenzilla/vite-plugin-tailwindcss-spritesmith#readme",
   "publishConfig": {
     "access": "public"
   },
@@ -49,15 +70,28 @@
     "@semantic-release/github": "^9.0.4",
     "@semantic-release/npm": "^10.0.4",
     "@semantic-release/release-notes-generator": "^11.0.4",
+    "@types/lodash": "^4.14.196",
+    "@types/spritesmith": "^3.4.1",
     "commitizen": "^4.3.0",
     "conventional-changelog-conventionalcommits": "^6.1.0",
     "cz-conventional-changelog": "^3.3.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.0",
     "semantic-release": "^21.0.7",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "vite": "^4.4.7"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "glob": "^10.3.3",
+    "lodash": "^4.17.21",
+    "mkdirp": "^3.0.1",
+    "rollup": "^3.27.0",
+    "spritesmith": "^3.4.1",
+    "tailwindcss": "^3.3.3"
   }
 }
