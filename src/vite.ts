@@ -210,11 +210,16 @@ export default function vite(
 					await mkdirp(dirname(outputImage))
 				}
 				await new Promise<void>((resolve, reject) => {
-					writeFile(outputImage, spritesheetResult.image, 'binary', (err) => {
-						if (err) {
-							reject(err)
-						} else resolve()
-					})
+					writeFile(
+						outputImage,
+						spritesheetResult.image as unknown as Buffer,
+						'binary',
+						(err) => {
+							if (err) {
+								reject(err)
+							} else resolve()
+						},
+					)
 				})
 
 				return result
