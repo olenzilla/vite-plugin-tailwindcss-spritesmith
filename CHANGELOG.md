@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/olenzilla/vite-plugin-tailwindcss-spritesmith/compare/v1.0.0...v1.0.1) (2023-08-05)
+
+
+### Bug Fixes
+
+* **docs:** Indicate the package is now deprecated ([107916a](https://github.com/olenzilla/vite-plugin-tailwindcss-spritesmith/commit/107916a25f7d03efe0f9305fd5af51942ac91375))
+
 # 1.0.0 (2023-07-31)
 
 
