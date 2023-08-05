@@ -1,4 +1,6 @@
-# @olenzilla/vite-plugin-tailwindcss-spritesmith ![npm](https://img.shields.io/npm/v/@olenzilla/vite-plugin-tailwindcss-spritesmith) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+# DEPRECATED - Please use [@olenzilla/tailwindcss-plugin-spritesmith](https://github.com/olenzilla/tailwindcss-plugin-spritesmith) instead
+
+![npm](https://img.shields.io/npm/v/@olenzilla/vite-plugin-tailwindcss-spritesmith) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 [![NPM](https://nodei.co/npm/@olenzilla/vite-plugin-tailwindcss-spritesmith.png)](https://nodei.co/npm/@olenzilla/vite-plugin-tailwindcss-spritesmith/)
 A Vite plugin for creating:
